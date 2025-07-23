@@ -127,6 +127,28 @@ HAL_StatusTypeDef  lcd_setpage_address(int page_num){
 
 	return lcd_transfer(data);
 }
+/*
+ * seg remap = 1 -> D7 to D0
+ * seg rempa = 0 -> D0 to D7
+ *
+ * */
+HAL_StatusTypeDef lcd_segRemap(int value){
+	if (value == 1){
+
+		uint8_t data = 0xA1;
+
+		return lcd_transfer(data);
+	}
+	else if(value == 0){
+		uint8_t data = 0xA0;
+
+		return lcd_transfer(data);
+	}
+	else{
+		return HAL_ERROR;
+	}
+
+}
 
 //set the column address for writing pixels
 // must be between 0 and 127, there are 128 columns

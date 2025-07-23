@@ -10,6 +10,10 @@ void AppMain(void){
 	lcd_setpage_address(0);
 	lcd_setcolumn_address(0);
 
+	//lcd_reset();
+	lcd_ON();
+	lcd_OFF();
+
 	while(1){
 		/*
 		lcd_ALLpixels();
@@ -20,11 +24,12 @@ void AppMain(void){
 		lcd_ON();
 		lcd_OFF();
 		*/
-		for(int i = 0; i < 8; i++){
+		for(int i = 0; i < 10; i++){
+			HAL_Delay(10);
 			lcd_writeRAM(0xFF);
 		}
 		lcd_ON();
-		lcd_OFF();
+		//lcd_OFF();
 	}
 
 }

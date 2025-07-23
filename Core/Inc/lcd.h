@@ -18,6 +18,7 @@ HAL_StatusTypeDef  lcd_RAMpixels(void);
 HAL_StatusTypeDef  lcd_setcolumn_address(int column_num);
 HAL_StatusTypeDef  lcd_setpage_address(int page_num);
 
+HAL_StatusTypeDef lcd_segRemap(int value);
 HAL_StatusTypeDef setPageaddressing();
 HAL_StatusTypeDef setVerticaladdressing();
 
